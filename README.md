@@ -1,5 +1,5 @@
 # project4
-(https://res.cloudinary.com/drz8x4anh/image/upload/v1581964574/FL%20Logo.png)
+- ![Logo](https://res.cloudinary.com/drz8x4anh/image/upload/v1581964574/FL%20Logo.png)
 
 ##Project Description
 
