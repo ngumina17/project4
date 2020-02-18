@@ -3,7 +3,7 @@
 
 ##Project Description
 
-Fit Life is a health progress tracking app. Using Python, Django, RabbitMQ, and Celery, a user is able to log their workouts, meals, and set goals for themselves. Once goals are set, a user is able to mark those as accomplished as well.
+Fit Life is a health progress tracking app. Using Python, Django, and Bootstrap, a user is able to log their workouts, meals, and set goals for themselves. Once goals are set, a user is able to mark those as accomplished as well.
 
 ## MVP Wireframes
 
