@@ -1,15 +1,20 @@
 from django import forms
 from .models import User, Meals, Goals, Workout
 
-class AuthorForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = Author
-        fields = ('name', 'location', 'photo_url',)
+        model = User
+        fields = ('name', 'photo_url',)
 
-class BlogForm(forms.ModelForm):
+class MealForm(forms.ModelForm):
     class Meta:
-        model = Blog
-        fields = ('title', 'author', 'content', 'photo_url',)
+        model = Meals
+        fields = ('Meal_Type', 'contents', 'calories',)
 
-class SearchBar(forms.Form):
-        fields = ('search')
+class GoalsForm(forms.ModelForm):
+        model = Goals
+        fields = ('contents',) 
+
+class WorkoutForm(forms.ModelForm):
+        model = Workout
+        fields = ('completed', 'notes',)

@@ -26,6 +26,7 @@ class Goals(models.Model):
 
 class Workout(models.Model):
     completed = models.TextField()
+    notes=models.CharField(default='', max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='workouts')
     
     def __str__(self):
