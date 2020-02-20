@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+  <head>
+    <title>Fit Life</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/tunr.css' %}" /> -->
+  </head>
+
+  <body>
+    <header>
+      <!-- <a href="/"><h1>Fit Life</h1></a> -->
+    </header>
+    <nav>
+        <nav>
+            <div class="user-info">
+              {% if user.is_authenticated %} Welcome, {{ user.username }}
+              <a href="{% url 'logout' %}">Log out</a>
+              {% else %}
+              <a href="{% url 'login' %}">Login</a>
+              <a href="{% url 'signup' %}">Signup</a>
+              {% endif %}
+            </div>
+          </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>
