@@ -79,13 +79,24 @@ WSGI_APPLICATION = 'FitLife.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fitlife',
+#         'USER': 'fit',
+#         'PASSWORD': 'fit',
+#         'HOST': 'localhost'
+
+#     }
+#     postgres://pgcjzuworecbop:0c3de97217a6cb879a9f9365c1589628a97da85b0563583c5b1d4ab39dfbcd7a@ec2-3-230-106-126.compute-1.amazonaws.com:5432/db6kem4h3vmf9c
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fitlife',
-        'USER': 'fit',
-        'PASSWORD': 'fit',
-        'HOST': 'localhost'
+        'NAME': 'db6kem4h3vmf9c',
+        'USER': 'pgcjzuworecbop',
+        'PASSWORD': '0c3de97217a6cb879a9f9365c1589628a97da85b0563583c5b1d4ab39dfbcd7a',
+        'HOST': 'ec2-3-230-106-126.compute-1.amazonaws.com'
     }
 }
 
