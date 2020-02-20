@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import User, Meals, Goals, Workout
 # from .forms import UserForm, MealForm, GoalsForm, WorkoutForm
-from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def user_dashboard(request):

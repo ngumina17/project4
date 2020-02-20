@@ -12,12 +12,7 @@
     <nav>
         <nav>
             <div class="user-info">
-              {% if user.is_authenticated %} Welcome, {{ user.username }}
-              <a href="{% url 'logout' %}">Log out</a>
-              {% else %}
-              <a href="{% url 'login' %}">Login</a>
-              <a href="{% url 'signup' %}">Signup</a>
-              {% endif %}
+
             </div>
           </nav>
     {% block content %} {% endblock %}
