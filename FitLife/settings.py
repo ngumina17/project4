@@ -26,7 +26,7 @@ SECRET_KEY = 'k7v)(y6y(&c-*r-)=5#9o9xgy0))3#3$e4_ay!1^!wi*)j#8zn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fitlifeapp17.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','fitlifeapp17.herokuapp.com']
 
 
 # Application definition
