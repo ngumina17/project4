@@ -7,13 +7,13 @@
 
   <body>
     <header>
-      <!-- <a href="/"><h1>Fit Life</h1></a> -->
+      <a href="/"><h1>Fit Life</h1></a>
     </header>
-    <nav>
-        <nav>
-            <div class="user-info">
-
-            </div>
+          <nav>
+            <a href="{% url 'user_form' %}">Add A New User</a>
+            <a href="{% url 'workout_list' %}">Completed Workouts</a>
+            <a href="{% url 'workout_form' %}">Add a New Workout</a>
+            <a href="{% url 'meal_form' %}">Add a New Meal</a>
           </nav>
     {% block content %} {% endblock %}
   </body>

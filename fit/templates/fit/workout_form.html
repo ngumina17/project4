@@ -1,8 +1,8 @@
 {% extends 'fit/base.html' %} {% block content %}
-<h1>Log A Meal</h1>
+<h1>New Workout</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-<button type='submit' class='btn btn-info'>Save</button>
+    <button type='submit' class='btn btn-info'>Save</button>
 </form>
 {% endblock %}

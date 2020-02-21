@@ -1,0 +1,10 @@
+{% extends 'fit/base.html' %} {% block content %}
+<h2>Completed Workouts</h2>
+<ul>
+  {% for workout in workouts %}
+  <li>
+    <a href="{% url 'user_dashboard' pk=user.id %}">{{ user.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
