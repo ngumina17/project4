@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'fit',
     'django_extensions',
     'whitenoise.runserver_nostatic',
+    'crispy_forms',
     ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
