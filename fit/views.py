@@ -51,3 +51,14 @@ def meal_form(request):
     return render(request, 'fit/meal_form.html', {'form': form})
 
 
+def goal_form(request):
+    if request.method == 'POST':
+        form = GoalsForm(request.POST)
+        if form.is_valid():
+            goal = form.save()
+            return redirect('goal_list', pk=goal.pk)
+    else:
+        form = GoalsForm()
+    return render(request, 'fit/goal_form.html', {'form': form})
+
+

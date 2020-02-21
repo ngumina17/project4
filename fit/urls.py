@@ -8,4 +8,5 @@ urlpatterns = [
     path('workouts/', views.workout_list, name='workout_list'),
     path('workout/new/', views.workout_form, name='workout_form'),
     path('meals/new/', views.meal_form, name='meal_form'),
+    path('goals/new/', views.goal_form, name='goal_form'),
 ]
