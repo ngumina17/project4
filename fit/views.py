@@ -27,7 +27,7 @@ def user_form(request):
 
 @login_required
 def workout_list(request):
-    workouts = Workout.objects.all()
+    workouts = Workout.objects.filter(user=request.user.id)
     return render(request, 'fit/workout_list.html', {'workouts': workouts})
 
 @login_required
