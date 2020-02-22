@@ -24,3 +24,4 @@ class WorkoutForm(forms.ModelForm):
     class Meta:
         model = Workout
         fields = ('completed', 'notes',)
+        

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import User, Meals, Goals, Workout
 from .forms import UserForm, MealForm, GoalsForm, WorkoutForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -26,20 +27,23 @@ def user_form(request):
 
 
 def workout_list(request):
-    workout = Workout.objects.all()
-    return render(request, 'fit/workout_list.html', {'workout': workout})
+    workouts = Workout.objects.all()
+    return render(request, 'fit/workout_list.html', {'workouts': workouts})
 
-
+@login_required
 def workout_form(request):
     if request.method == 'POST':
-        form = WorkoutForm(request.POST)
+        form = WorkoutForm(request.POST, request.FILES)
         if form.is_valid():
-            workout = form.save()
+            workout = form.save(commit=False)
+            workout.user_id = request.user.id
+            workout.save()
             return redirect('workout_list', pk=workout.pk)
     else:
         form = WorkoutForm()
     return render(request, 'fit/workout_form.html', {'form': form})
 
+@login_required
 def meal_form(request):
     if request.method == 'POST':
         form = MealForm(request.POST)
@@ -50,7 +54,7 @@ def meal_form(request):
         form = MealForm()
     return render(request, 'fit/meal_form.html', {'form': form})
 
-
+@login_required
 def goal_form(request):
     if request.method == 'POST':
         form = GoalsForm(request.POST)

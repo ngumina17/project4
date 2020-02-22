@@ -1,11 +1,10 @@
 {% extends 'fit/base.html' %} {% block content %}
-<!-- <h2>{{ user.name }}</h2> -->
+
 
 <ul>
-   {% for fit in fit %} 
    <li>
-      <a href="{% url 'user_dashboard' pk=user.pk %}">{{user.name}}</a>
+    <a class="btn btn-success" href="{% url 'workout_form' %}" role="button">Add A New WOrkout</a>
     </li>
-    {% endfor %}
+  
   </ul>
 {% endblock %}
