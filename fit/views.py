@@ -48,11 +48,19 @@ def meal_form(request):
     if request.method == 'POST':
         form = MealForm(request.POST)
         if form.is_valid():
+            meal = form.save(commit=False)
+            meal.user_id = request.user.id
             meal = form.save()
-            return redirect('meal_list', pk=meal.pk)
+            return redirect('meal_list')
     else:
         form = MealForm()
     return render(request, 'fit/meal_form.html', {'form': form})
+
+
+@login_required
+def meal_list(request):
+    meals = Meals.objects.filter(user=request.user.id)
+    return render(request, 'fit/meal_list.html', {'meals': meals})
 
 @login_required
 def goal_form(request):

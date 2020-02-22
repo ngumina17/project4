@@ -1,4 +1,13 @@
-{% extends 'fit/base.html' %} {% block content %}
-<h1>working</h1>
-{% endblock %}
 
+{% extends 'fit/base.html' %} {% block content %}
+<h2>Logged Meals</h2>
+<ul>
+  {% for meal in meals %}
+  <li>
+    {{ meal.type }}
+    {{ meal.contents }}
+    {{ meal.calories }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
