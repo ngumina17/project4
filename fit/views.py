@@ -25,7 +25,7 @@ def user_form(request):
         form = UserForm()
     return render(request, 'fit/user_form.html', {'form': form})
 
-
+@login_required
 def workout_list(request):
     workouts = Workout.objects.all()
     return render(request, 'fit/workout_list.html', {'workouts': workouts})
@@ -38,7 +38,7 @@ def workout_form(request):
             workout = form.save(commit=False)
             workout.user_id = request.user.id
             workout.save()
-            return redirect('workout_list', pk=workout.pk)
+            return redirect('workout_list')
     else:
         form = WorkoutForm()
     return render(request, 'fit/workout_form.html', {'form': form})
