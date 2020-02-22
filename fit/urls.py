@@ -10,4 +10,5 @@ urlpatterns = [
     path('workout/new/', views.workout_form, name='workout_form'),
     path('meals/new/', views.meal_form, name='meal_form'),
     path('goals/new/', views.goal_form, name='goal_form'),
+    path('goals/', views.goal_list, name='goal_list'),
 ]

@@ -67,10 +67,16 @@ def goal_form(request):
     if request.method == 'POST':
         form = GoalsForm(request.POST)
         if form.is_valid():
+            goal = form.save(commit=False)
+            goal.user_id = request.user.id
             goal = form.save()
-            return redirect('goal_list', pk=goal.pk)
+            return redirect('goal_list')
     else:
         form = GoalsForm()
     return render(request, 'fit/goal_form.html', {'form': form})
 
+@login_required
+def goal_list(request):
+    goals = Goals.objects.filter(user=request.user.id)
+    return render(request, 'fit/goal_list.html', {'goals': goals})
 

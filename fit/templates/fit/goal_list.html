@@ -1,0 +1,11 @@
+
+{% extends 'fit/base.html' %} {% block content %}
+<h2>Goals</h2>
+<ul>
+  {% for goal in goals %}
+  <li>
+    {{ goal.contents }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
