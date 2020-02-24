@@ -1,12 +1,15 @@
 
 {% extends 'fit/base.html' %} {% block content %}
-<h2>Completed Workouts</h2>
-<ul>
+<h2 class='wTitle'>Completed Workouts</h2>
+
+
   {% for workout in workouts %}
-  <li>
+  <div class='workouts'>
+  <button type= "button" class="btn btn-info"><a href="{% url 'workout_edit' id=workout.id%}">Edit</a></button>
     {{ workout.completed }}
-    <button type= "button" class="btn btn-info"><a href="{% url 'workout_edit' id=workout.id%}">Edit</a></button>
-  </li>
+    
+  
+  </div>
   {% endfor %}
-</ul>
+
 {% endblock %}

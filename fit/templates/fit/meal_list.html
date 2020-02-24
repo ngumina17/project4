@@ -1,17 +1,18 @@
 
 {% extends 'fit/base.html' %} {% block content %}
-<h2>Logged Meals</h2>
-<ul class = 'meals'>
+<h2 class='lMeals'>Logged Meals</h2>
+<ul class='meal'>
   {% for meal in meals %}
-  <li>
-    Meal Type:{{ meal.Meal_Type }}
-  </li>
-  <li>
-    Contents:{{ meal.contents }}
-  </li>
-  <li>
-    Calories:{{ meal.calories }}
+  
+  <li class='meals'>
+  
+    <p>Meal Type:{{ meal.Meal_Type }}</p>
+
+    <p>Contents:{{ meal.contents }}</p>
+  
+    <p>Calories:{{ meal.calories }}</p>
     <button type= "button" class="btn btn-info"><a href="{% url 'meal_edit' id=meal.id%}">Edit</a></button>
+    
   </li>
   {% endfor %}
 </ul>

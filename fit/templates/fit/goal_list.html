@@ -1,9 +1,9 @@
 
 {% extends 'fit/base.html' %} {% block content %}
 <h2>Goals</h2>
-<ul>
+<ul class="list-group">
   {% for goal in goals %}
-  <li>
+  <li class="list-group-item">
     {{ goal.contents }}
     <button type= "button" class="btn btn-info"><a href="{% url 'goal_edit' id=goal.id%}">Edit</a></button>
   </li>

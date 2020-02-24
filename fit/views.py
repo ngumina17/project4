@@ -119,3 +119,5 @@ def goal_edit(request, id):
     else:
         form = GoalsForm(instance = goal)
         return render(request, 'fit/goal_form.html', {'form': form})
+
+
