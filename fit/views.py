@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import User, Meals, Goals, Workout
-from .forms import UserForm, MealForm, GoalsForm, WorkoutForm
+from .forms import MealForm, GoalsForm, WorkoutForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -80,3 +80,15 @@ def goal_list(request):
     goals = Goals.objects.filter(user=request.user.id)
     return render(request, 'fit/goal_list.html', {'goals': goals})
 
+
+@login_required
+def workout_edit(request):
+    workout = Workout.objects.get()
+    if request.method == "POST":
+        form = WorkoutForm(request.POST, instance=workout)
+        if form.is_valid():
+            workout = form.save()
+            return redirect('workout_list')
+    else:
+        form = WorkoutForm(instance=workout)
+    return render(request, 'fit/workout_form.html', {'form': form})

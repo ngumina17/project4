@@ -1,8 +1,9 @@
 {% extends 'fit/base.html' %} {% block content %}
+{% load crispy_forms_tags %}
 <h1>Log A Meal</h1>
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
 <button type='submit' class='btn btn-info'>Save</button>
 </form>
 {% endblock %}
