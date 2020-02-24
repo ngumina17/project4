@@ -5,6 +5,7 @@
   {% for workout in workouts %}
   <li>
     {{ workout.completed }}
+    <button type= "button" class="btn btn-info"><a href="{% url 'workout_edit' id=workout.id%}">Edit</a></button>
   </li>
   {% endfor %}
 </ul>

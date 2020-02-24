@@ -75,20 +75,47 @@ def goal_form(request):
         form = GoalsForm()
     return render(request, 'fit/goal_form.html', {'form': form})
 
+
+
 @login_required
 def goal_list(request):
     goals = Goals.objects.filter(user=request.user.id)
     return render(request, 'fit/goal_list.html', {'goals': goals})
 
 
+
 @login_required
-def workout_edit(request):
-    workout = Workout.objects.get()
-    if request.method == "POST":
-        form = WorkoutForm(request.POST, instance=workout)
-        if form.is_valid():
+def workout_edit(request, id):
+    workout = Workout.objects.get(id = id)
+    if request.method == 'POST':
+        form = WorkoutForm(request.POST, instance = workout)
+        if form.is_valid:
             workout = form.save()
             return redirect('workout_list')
     else:
-        form = WorkoutForm(instance=workout)
-    return render(request, 'fit/workout_form.html', {'form': form})
+        form = WorkoutForm(instance = workout)
+        return render(request, 'fit/workout_form.html', {'form': form})
+
+@login_required
+def meal_edit(request, id):
+    meal = Meals.objects.get(id = id)
+    if request.method == 'POST':
+        form = MealForm(request.POST, instance = meal)
+        if form.is_valid:
+            workout = form.save()
+            return redirect('meal_list')
+    else:
+        form = MealForm(instance = meal)
+        return render(request, 'fit/meal_form.html', {'form': form})
+
+@login_required
+def goal_edit(request, id):
+    goal = Goals.objects.get(id = id)
+    if request.method == 'POST':
+        form = GoalsForm(request.POST, instance = goal)
+        if form.is_valid:
+            goal = form.save()
+            return redirect('goal_list')
+    else:
+        form = GoalsForm(instance = goal)
+        return render(request, 'fit/goal_form.html', {'form': form})

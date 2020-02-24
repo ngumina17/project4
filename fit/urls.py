@@ -10,4 +10,8 @@ urlpatterns = [
     path('meals/new/', views.meal_form, name='meal_form'),
     path('goals/new/', views.goal_form, name='goal_form'),
     path('goals/', views.goal_list, name='goal_list'),
+    path('workout/edit/<int:id>', views.workout_edit, name='workout_edit'),
+    path('meal/edit/<int:id>', views.meal_edit, name='meal_edit'),
+    path('goal/edit/<int:id>', views.goal_edit, name='goal_edit'),
+    
 ]

@@ -1,12 +1,17 @@
 
 {% extends 'fit/base.html' %} {% block content %}
 <h2>Logged Meals</h2>
-<ul>
+<ul class = 'meals'>
   {% for meal in meals %}
   <li>
-    {{ meal.type }}
-    {{ meal.contents }}
-    {{ meal.calories }}
+    Meal Type:{{ meal.Meal_Type }}
+  </li>
+  <li>
+    Contents:{{ meal.contents }}
+  </li>
+  <li>
+    Calories:{{ meal.calories }}
+    <button type= "button" class="btn btn-info"><a href="{% url 'meal_edit' id=meal.id%}">Edit</a></button>
   </li>
   {% endfor %}
 </ul>
