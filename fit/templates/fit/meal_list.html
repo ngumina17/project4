@@ -12,6 +12,7 @@
   
     <p>Calories:{{ meal.calories }}</p>
     <button type= "button" class="btn btn-info"><a href="{% url 'meal_edit' id=meal.id%}">Edit</a></button>
+    <button type="button" class="btn btn-danger"><a href="{% url 'meal_delete' pk=meal.pk %}">Delete</a></button>
     
   </li>
   {% endfor %}

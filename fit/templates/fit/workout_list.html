@@ -6,6 +6,7 @@
   {% for workout in workouts %}
   <div class='workouts'>
   <button type= "button" class="btn btn-info"><a href="{% url 'workout_edit' id=workout.id%}">Edit</a></button>
+  <button type="button" class="btn btn-danger"><a href="{% url 'workout_delete' id=workout.id %}">Completed</a></button>
     {{ workout.completed }}
     
   

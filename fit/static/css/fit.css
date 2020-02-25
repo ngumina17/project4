@@ -30,3 +30,19 @@
 .lMeals {
     text-align: center;
 }
+
+.goals {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: 280px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    list-style: none;
+
+}
+
+.lGoals{
+    text-align: center;
+}

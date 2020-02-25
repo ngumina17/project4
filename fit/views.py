@@ -120,4 +120,18 @@ def goal_edit(request, id):
         form = GoalsForm(instance = goal)
         return render(request, 'fit/goal_form.html', {'form': form})
 
+@login_required
+def meal_delete(request, pk):
+    Meals.objects.get(id=pk).delete()
+    return redirect('meal_list')
+
+
+def goal_delete(request, id):
+    Goals.objects.get(pk=id).delete()
+    return redirect('goal_list')
+
+def workout_delete(request, id):
+    Workout.objects.get(id=id).delete()
+    return redirect('workout_list')
+
 
