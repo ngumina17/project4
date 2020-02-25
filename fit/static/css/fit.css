@@ -66,8 +66,11 @@ body {
 .wrapper {
     display: grid;
     grid-column-gap: 10px;
+    border: 30px 30px 30px 30px;
+    padding: 50px 50px 50px 50px;
 }
 
 .welcome {
-    
+    text-align: center;
+    margin-bottom: 20px;
 }
