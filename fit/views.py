@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def user_dashboard(request):
     users = User.objects.all()
     return render(request, 'fit/user_dashboard.html', {'users': users})
