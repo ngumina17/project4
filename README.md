@@ -1,8 +1,8 @@
 # project4
 - ![Logo](https://res.cloudinary.com/drz8x4anh/image/upload/v1581964574/FL%20Logo.png)
-- ![Deployed Site](https://fitlifeapp17.herokuapp.com/)
+- [Deployed Site](https://fitlifeapp17.herokuapp.com/)
 
-##Project Description
+## Project Description
 
 Fit Life is a health progress tracking app. Using Python, Django, Crispy Forms, and Bootstrap, a user is able to log their workouts, meals, and set goals for themselves. Once goals are set, a user is able to mark those as accomplished as well.
 
