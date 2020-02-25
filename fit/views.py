@@ -9,22 +9,6 @@ def user_dashboard(request):
     users = User.objects.all()
     return render(request, 'fit/user_dashboard.html', {'users': users})
 
-
-def user_list(request):
-    users = User.objects.all()
-    return render(request, 'fit/user_list.html', {'users': users})
-
-
-def user_form(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            return redirect('user_dashboard', pk=user.pk)
-    else:
-        form = UserForm()
-    return render(request, 'fit/user_form.html', {'form': form})
-
 @login_required
 def workout_list(request):
     workouts = Workout.objects.filter(user=request.user.id)

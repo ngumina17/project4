@@ -3,7 +3,15 @@
 <h1>Log A Meal</h1>
 <form method="POST">
     {% csrf_token %}
-    {{ form|crispy }}
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        {{ form.Meal_Type|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.calories|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.contents|as_crispy_field }}
 <button type='submit' class='btn btn-info'>Save</button>
 </form>
 {% endblock %}

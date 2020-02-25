@@ -1,4 +1,10 @@
+body {
+    background-image: linear-gradient(to right, rgba(255, 224, 222), rgba(255, 109, 99));
+}
 
+.title{
+    color: black;
+}
 
 .workouts {
     border: 1px solid black;
@@ -47,3 +53,11 @@
     text-align: center;
 }
 
+.nav-item{
+    list-style: none;
+    color: black !important;
+}
+
+.btn {
+    color: black
+}
